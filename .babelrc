@@ -1,0 +1,4 @@
+//goldman/.babelrc
+{
+  "presets": ["@babel/preset-env"]
+}

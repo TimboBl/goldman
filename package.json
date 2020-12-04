@@ -1,0 +1,35 @@
+{
+  "name": "goldman",
+  "version": "0.0.1",
+  "description": "A discord bot with anarchic tendencies",
+  "main": "index.js",
+  "scripts": {
+    "start": "rm -r dist && npm run babel && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "./node_modules/.bin/babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimboBl/goldman.git"
+  },
+  "keywords": [
+    "disordjs",
+    "bot",
+    "discord",
+    "anarchy"
+  ],
+  "author": "Timbo Blaesche",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimboBl/goldman/issues"
+  },
+  "homepage": "https://github.com/TimboBl/goldman#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7"
+  }
+}
