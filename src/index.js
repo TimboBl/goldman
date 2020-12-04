@@ -2,9 +2,10 @@ import * as Discord from "discord.js";
 import Logger from "./util/logger";
 import { TOKEN } from "./config/constants";
 import MessageController from "./controller/messageController";
+let client;
 
 const startBot = () => {
-	const client = new Discord.Client();
+	client = new Discord.Client();
 
 	client.login(TOKEN);
 
@@ -19,5 +20,14 @@ const startBot = () => {
 	});
 
 };
+
+process.on('SIGTERM', () => {
+	Logger.info("SIGTERM received. Shutting down.")
+	client.destroy();
+});
+process.on('SIGINT', () => {
+	Logger.info("SIGINT received. Shutting down.");
+	client.destroy();
+});
 
 startBot();
