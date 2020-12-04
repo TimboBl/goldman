@@ -19,7 +19,15 @@ const MessageController = (message, client) => {
 		client.channel.cache.get(channel).send(message);
 	};
 
-	const messageParts = message.content.split(" ");
+	let messageParts;
+	if (message.content.includes("'")) {
+		const quotedPart = message.content.split("'");
+		messageParts = quotedPart[0].split(" ");
+		messageParts.push(quotedPart[1]);
+		messageParts = messageParts.filter(x => x !== '');
+	} else {
+		messageParts = message.content.split(" ");
+	}
 	messageParts.splice(0, 1);
 	const command = messageParts.shift();
 	messageParts.push(message);
