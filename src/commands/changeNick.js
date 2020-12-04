@@ -10,7 +10,7 @@ const changeNick = (params) => {
 	}
 	const {userId, newNick, message} = contents;
 	if (userId) {
-		return message.guild.members.fetch(userId.slice(2, -1).replace("!", "")).then(member => member.setNickname(newNick));
+		return message.guild.members.fetch(userId.slice(2, -1).replace("!", "").replace("&", "")).then(member => member.setNickname(newNick));
 	} else {
 		return message.guild.members.fetch(message.author.id).then(author => author.setNickname(newNick));
 	}
