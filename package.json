@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/TimboBl/goldman#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
